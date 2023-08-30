@@ -21,11 +21,6 @@ async function main() {
     res.send("Hello World");
   });
 
-  // Endpoint /oi
-  app.get("/oi", function (req, res) {
-    res.send("Olá, mundo!");
-  });
-
   // Endpoints de Herois
   const lista = ["Mulher Maravilha", "Capitã Marvel", "Homem de Ferro"];
   //             0                    1                2
