@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const { MongoClient, ObjectId } = require('mongodb');
 
-const url = 'mongodb://localhost:27017';
+// const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://costaaraujojoaopedro:pHSOwlC6rdFkQOnu@cluster0.twosb3p.mongodb.net/';
 const client = new MongoClient(url);
 const dbName = 'jornada_backend_ocean';
 
@@ -20,10 +21,6 @@ async function main() {
   app.get("/", function (req, res) {
     res.send("Hello World");
   });
-
-  // Endpoints de Herois
-  const lista = ["Mulher Maravilha", "Capitã Marvel", "Homem de Ferro"];
-  //             0                    1                2
 
   // Read All -> [GET] /herois
   app.get("/herois", async function (req, res) {
@@ -96,7 +93,7 @@ async function main() {
     res.send("Item excluído com sucesso!");
   });
 
-  app.listen(3000);
+  app.listen(process.env.PORT || 3000);
 }
 
 main();
