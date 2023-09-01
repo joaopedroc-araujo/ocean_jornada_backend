@@ -16,6 +16,10 @@ async function main() {
 
   // Habilitamos o processamento de JSON
   app.use(express.json());
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
 
   // Endpoint Principal
   app.get("/", function (req, res) {

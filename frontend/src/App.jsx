@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetch('http://localhost:3000/herois')
+      await fetch('https://ocean-jornada-backend.onrender.com/herois')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error('Erro ao buscar dados:', error))
@@ -21,6 +21,7 @@ function App() {
         <div key={index}>
           <h1>{heroi.nome}</h1>
           <p>{heroi._id}</p>
+          <img src={heroi.imagem} alt={heroi.nome} />
         </div>
       ))}
     </>
